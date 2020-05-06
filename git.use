@@ -1,3 +1,8 @@
+git config user.email "htmboy8@msn.com"
+git config user.name "htmboy"
+
+
+
 …or create a new repository on the command line
 
 echo "# php" >> README.md
