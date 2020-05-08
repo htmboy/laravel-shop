@@ -41,3 +41,11 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 });
 
 Route::get('products/{product}', 'ProductsController@show')->name('products.show');
+
+Route::get('alipay', function() {
+    return app('alipay')->web([
+        'out_trade_no' => time()+300,
+        'total_amount' => '0.1',
+        'subject' => 'test subject - 测试',
+    ]);
+});
