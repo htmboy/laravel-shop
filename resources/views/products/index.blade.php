@@ -16,7 +16,7 @@
                                         <!-- 添加一个名为 全部 的链接，直接跳转到商品列表页 -->
                                         <a class="all-products" href="{{ route('products.index') }}">全部</a> >
                                         <!-- 如果当前是通过类目筛选的 -->
-                                    @if ($category)
+                                    @if (isset($category))
                                         <!-- 遍历这个类目的所有祖先类目，我们在模型的访问器中已经排好序，因此可以直接使用 -->
                                         @foreach($category->ancestors as $ancestor)
                                             <!-- 添加一个名为该祖先类目名的链接 -->
@@ -52,7 +52,7 @@
                     <!-- 展示子类目开始 -->
                     <div class="filters">
                         <!-- 如果当前是通过类目筛选，并且此类目是一个父类目 -->
-                        @if ($category && $category->is_directory)
+                        @if (isset($category) && $category->is_directory)
                             <div class="row">
                                 <div class="col-3 filter-key">子类目：</div>
                                 <div class="col-9 filter-values">
