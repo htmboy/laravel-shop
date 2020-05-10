@@ -8,7 +8,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 class CategoriesController extends AdminController
 {
@@ -81,6 +81,7 @@ class CategoriesController extends AdminController
             // 定义一个名为父类目的下拉框
             $form->select('parent_id', '父类目')->ajax('/admin/api/categories');
         }
+
         return $form;
     }
 
